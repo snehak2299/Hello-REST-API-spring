@@ -57,5 +57,4 @@ public class Message implements org.apache.logging.log4j.message.Message {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
