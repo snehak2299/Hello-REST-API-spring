@@ -3,6 +3,7 @@ package com.bridglab.springrest.controller;
 
 import org.apache.logging.log4j.message.Message;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,6 +32,10 @@ public class MyRestController {
 	public Message message(@PathVariable String name) {
 		msg = new com.bridglab.springrest.beans.Message(name, "Hello " + name + " !");
 		return msg;
+	}
+	@PostMapping("/post")
+	public String sayHello(@RequestBody Message name) {
+		return "Hello " + name.getName() + "" + name.getlast() +"!";
 	}
 	
 }

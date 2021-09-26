@@ -2,7 +2,7 @@ package com.bridglab.springrest.beans;
 
 public class Message implements org.apache.logging.log4j.message.Message {
 	private String name;
-	private String text;
+	private String last;
 
 	public String getName() {
 		return name;
@@ -12,17 +12,17 @@ public class Message implements org.apache.logging.log4j.message.Message {
 		this.name = name;
 	}
 
-	public String getText() {
-		return text;
+	public String getlast() {
+		return last;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setlast(String last) {
+		this.last = last;
 	}
 
 	public Message(String name, String text) {
 		this.name = name;
-		this.text = text;
+		this.last = text;
 	}
 
 	public Message() {
@@ -31,7 +31,7 @@ public class Message implements org.apache.logging.log4j.message.Message {
 
 	@Override
 	public String toString() {
-		return "Message [name=" + name + ", text=" + text + "]";
+		return "Message [name=" + name + ", text=" + last + "]";
 	}
 
 	@Override
