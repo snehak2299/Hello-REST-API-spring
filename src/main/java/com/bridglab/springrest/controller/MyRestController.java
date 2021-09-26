@@ -4,6 +4,7 @@ package com.bridglab.springrest.controller;
 import org.apache.logging.log4j.message.Message;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,10 +34,17 @@ public class MyRestController {
 		msg = new com.bridglab.springrest.beans.Message(name, "Hello " + name + " !");
 		return msg;
 	}
-	@PostMapping("/postmap")
+	@PostMapping("/postmap")          //UC4 post mapping to display firstname+lastName
 	public String sayHello(@RequestBody Message name) {
-		return "Hello " + name.getName() + "" + name.getlast() +"!";
+		return "Hello " +name + "" + last+"!";
 	}
+	
+	
+	@PutMapping("/put/{Name}")   //UC5 put and path variable to display firstname+lastName
+	public String sayHello(@PathVariable String Name,@RequestParam(value = "last")String last) {
+		return "hello" + Name+""+last+"";	
+	}
+	
 	
 }
 
