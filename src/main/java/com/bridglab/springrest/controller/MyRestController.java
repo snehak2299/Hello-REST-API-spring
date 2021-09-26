@@ -33,7 +33,7 @@ public class MyRestController {
 		msg = new com.bridglab.springrest.beans.Message(name, "Hello " + name + " !");
 		return msg;
 	}
-	@PostMapping("/post")
+	@PostMapping("/postmap")
 	public String sayHello(@RequestBody Message name) {
 		return "Hello " + name.getName() + "" + name.getlast() +"!";
 	}
